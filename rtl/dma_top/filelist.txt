@@ -1,3 +1,4 @@
+dma_top.v
 dma_axi64.v
 dma_axi64_dual_core.v
 dma_axi64_apb_mux.v

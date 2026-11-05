@@ -100,9 +100,6 @@ module dma_axi64(clk,reset,scan_en,idle,INT,periph_tx_req,periph_tx_clr,periph_r
    wire                 slv_rd_port_num1;
    wire                 slv_wr_port_num1;
    
-   assign M0_AWID = 1'b0;
-   assign M0_WID  = 1'b0;
-   assign M0_ARID = 1'b0;
 
    wire [`ID_BITS-1:0]                  M0_AWID;
    wire [32-1:0]           M0_AWADDR;
@@ -178,6 +175,10 @@ module dma_axi64(clk,reset,scan_en,idle,INT,periph_tx_req,periph_tx_clr,periph_r
    
 
    
+   assign M0_AWID = 1'b0;
+   assign M0_WID  = 1'b0;
+   assign M0_ARID = 1'b0;
+
    dma_axi64_dual_core
    dma_axi64_dual_core (
              .clk(clk),
