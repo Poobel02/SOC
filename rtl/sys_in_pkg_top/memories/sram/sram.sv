@@ -4,7 +4,7 @@
 // Supports INCR and FIXED bursts; WRAP returns SLVERR
 // =============================================================
 `timescale 1ns/1ps
-module sram0 #(
+module sram #(
     parameter int DATA_WIDTH = 32,
     parameter int ADDR_WIDTH = 16,
     parameter int ID_WIDTH   = 4,
@@ -61,16 +61,10 @@ module sram0 #(
     localparam logic [1:0]  BURST_INCR  = 2'b01;
 
     // -------------------------------------------------------
-    // Memory array
+    // Memory ar
     // -------------------------------------------------------
     logic [DATA_WIDTH-1:0] mem [0:MEM_DEPTH-1];
 
-    // -------------------------------------------------------
-    // Memory initialisation (simulation only)
-    // -------------------------------------------------------
-  //  initial begin
-    //    for (int i = 0; i < MEM_DEPTH; i++) mem[i] = '0;
-   // end
 
     // -------------------------------------------------------
     // Helpers
@@ -119,6 +113,8 @@ module sram0 #(
             bid        <= '0;
             bresp      <= OKAY;
             wr_resp_acc <= OKAY;
+	    for (int i = 0; i < MEM_DEPTH; i++)
+		 mem[i] <= '0;
         end else begin
             case (wr_st)
                 WS_IDLE: begin

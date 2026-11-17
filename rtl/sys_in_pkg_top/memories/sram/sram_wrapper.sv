@@ -123,7 +123,7 @@ module sram_wrapper #(
     // SRAM0 INSTANCE
     // =====================================================
 
-    sram0 #(
+    sram #(
         .DATA_WIDTH (DATA_WIDTH),
         .ADDR_WIDTH (ADDR_WIDTH),
         .ID_WIDTH   (ID_WIDTH),
@@ -178,7 +178,7 @@ module sram_wrapper #(
     // SRAM1 INSTANCE
     // =====================================================
 
-    sram1 #(
+    sram #(
         .DATA_WIDTH (DATA_WIDTH),
         .ADDR_WIDTH (ADDR_WIDTH),
         .ID_WIDTH   (ID_WIDTH),
